@@ -16,7 +16,7 @@ export const User = ({userId, ...rest}: Props) => {
 
     return (
         <Box {...rest} key={users.id} sx={{
-            m: 3,
+            m: {xs:2,sm: 2},
             display: 'flex',
             fleDirection: 'row',
             alignItems: 'flexStart',
@@ -32,11 +32,10 @@ export const User = ({userId, ...rest}: Props) => {
                         height: '100%',
                         borderRadius: 16,
                         boxShadow: `0 5px 16px -3px ${theme.palette.primary.main}`,
-                        overflow: 'hidden',
                     }}
                 />
             <Box>
-                <Typography mx={2} variant="subtitle2">{users.firstName} {users.lastName}</Typography>
+                <Typography sx={{width: '100%',ml:2,}} variant="subtitle2">{users.firstName} {users.lastName}</Typography>
                 <PeopleAltIcon color="disabled" sx={{
                     mx: 2,
                     maxWidth: 20,

@@ -17,20 +17,23 @@ export const Post = ({body, title, userId, post, ...rest}: Options) => {
     return (
 
         <Card {...rest} sx={{
-            maxWidth: 600,
+            maxWidth: 535,
             width: '100%',
             maxHeight: 'fitContent',
             height:'100%',
             my: 2,
             display: 'flex',
-            flexDirection: 'row',
+            flexDirection: 'column',
+            flexWrap: 'wrap',
+            alignContent:'center',
+            alignItems: 'flexStart',
+
         }}>
             <User userId={userId}/>
             <Box sx={{
                 maxWidth: 500,
                 width: '100%',
-                my: 10,
-                ml: -8,
+                my: 1,
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'flexStart',
@@ -39,15 +42,14 @@ export const Post = ({body, title, userId, post, ...rest}: Options) => {
 
                 <Typography variant="h6" align='left' sx={{
                     my: 2,
-                    ml: {xs: -3, sm: -4,},
-                    typography: {xs: 'subtitle2',}
+                    mx: {xs: 2, sm: 0},
                 }}>
                     {title}
                 </Typography>
                 <Typography variant="subtitle2" align='justify' paragraph
                             sx={{
-                                ml: {xs: -3, sm: -4,},
-                                width: '100%',
+                                mx: {xs: 2, sm: 0},
+                                width: {xs: '92%', sm: '100%'},
                                 wordWrap: 'break-word',
                                 textAlign: 'left',
                                 typography: {xs: 'body2',}
