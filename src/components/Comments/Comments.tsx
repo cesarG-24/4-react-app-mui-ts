@@ -1,5 +1,5 @@
 import {HTMLAttributes} from "react";
-import {Box, Typography} from "@mui/material";
+import {Box, Card, Typography} from "@mui/material";
 
 import {useComments} from '../../hooks'
 import {IComments} from "../../ui-kit/Types";
@@ -16,49 +16,30 @@ export const Comments = ({postId, ...rest}: Props) => {
     comments = useComments({postId});
 
     return (
-        <Box {...rest}>
+        <Card {...rest} sx={{
+            maxWidth: "100%",
+            m: 2,
+            ml: {xs: -9, sm: -4},
+        }}>
+            <Typography align='left' sx={{m: 2, typography: {xs: 'body', sm: 'h6'}}}> Comments</Typography>
             {comments?.map((comment: IComments) =>
                 <Box key={comment.id}
                      sx={{
                          display: 'flex',
-                         flexDirection: 'row',
-                         p: 1,
-                         m: 1,
-                         borderRadius: 1,
-                         alignItems: 'center',
-                         ml: {xs: -9, sm: -4},
+                         flexDirection: 'column',
+                         m: 2,
+                         alignItems: 'left',
                      }}>
-                    <Box sx={{
-                        maxWidth: 100,
-                        width: '100%',
-                        maxHeight: 40,
-                        height: '100%',
-                        borderRadius: 16,
-                        boxShadow: '0 8px 16px 0 #BDC9D7',
-                        overflow: 'hidden',
-                        textAlign: 'center',
-                        mx: 3,
-                        my: 1,
-                        backgroundColor: '#b39ddb',
-                        p: 1,
-                    }}>
-                        <Typography variant='subtitle2'>{comment.user.username}</Typography>
-                    </Box>
-
-                    <Box sx={{
-                        maxWidth: 300,
-                        width: '100%',
-                        maxHeight: '100%',
-                        borderRadius: 16,
-                        boxShadow: '0 8px 16px 0 #BDC9D7',
-                        wordWrap: 'break-word',
-                        textAlign: 'center',
-                        backgroundColor: '#d1c4e9',
-                        p: 2,
-                    }}>
-                        <Typography variant='subtitle1' sx={{ typography: { xs: 'body2', sm: 'body1', } }}>{comment.body}</Typography>
-                    </Box>
+                    <Typography variant='subtitle2'>{comment.user.username}</Typography>
+                    <Typography variant='subtitle1'
+                                sx={{
+                                    maxWidth: 300,
+                                    width: '100%',
+                                    wordWrap: 'break-word',
+                                    textAlign: 'left',
+                                    typography: {xs: 'body2', sm: 'body1',}
+                                }}>{comment.body}</Typography>
                 </Box>)}
-        </Box>
+        </Card>
     )
 }

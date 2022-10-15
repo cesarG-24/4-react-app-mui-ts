@@ -16,28 +16,25 @@ export const User = ({userId, ...rest}: Props) => {
 
     return (
         <Box {...rest} key={users.id} sx={{
-            p: 1,
+            m: 3,
             display: 'flex',
             fleDirection: 'row',
             alignItems: 'flexStart',
         }}>
-            <Box>
                 <CardMedia
                     component="img"
-                    height="220"
                     image={users.image}
                     alt="green iguana"
                     sx={{
-                        maxWidth: 50,
+                        maxWidth: 45,
                         width: '100%',
-                        maxHeight: 50,
+                        maxHeight: 45,
                         height: '100%',
                         borderRadius: 16,
                         boxShadow: `0 5px 16px -3px ${theme.palette.primary.main}`,
                         overflow: 'hidden',
                     }}
                 />
-            </Box>
             <Box>
                 <Typography mx={2} variant="subtitle2">{users.firstName} {users.lastName}</Typography>
                 <PeopleAltIcon color="disabled" sx={{
@@ -46,7 +43,6 @@ export const User = ({userId, ...rest}: Props) => {
                     width: '100%',
                     maxHeight: 20,
                     height: '100%',
-                    mt: -2,
                 }}/>
             </Box>
         </Box>

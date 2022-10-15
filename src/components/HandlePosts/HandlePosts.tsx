@@ -37,7 +37,8 @@ export const HandlePosts = ({search}: Properties) => {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            mt: 13,
+            mt: 15,
+            boxSizing:'contentBox'
         }}>
             <PagBtn
                 counter={counter}
