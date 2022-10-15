@@ -23,14 +23,14 @@ export default function Posts({...rest}: Properties) {
         <Box {...rest} >
             <AppBar position='fixed' sx={{
                 display: 'flex',
-                mt: 6,
+                mt:6,
             }}>
-                <Typography variant='h6' sx={{ml: 5,}}> Posts </Typography>
+                <Typography variant='h6' sx={{ml: 5,display: { xs: 'none', sm: 'block' }}}> Posts </Typography>
                 <Toolbar sx={{
                     flexDirection: 'row',
                     justifyContent: 'space-around',
                     alignItems: 'center',
-                    mt: -4,
+                    mt:{sx:-6, sm:-4,},
                 }}>
 
 

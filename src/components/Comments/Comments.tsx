@@ -26,6 +26,7 @@ export const Comments = ({postId, ...rest}: Props) => {
                          m: 1,
                          borderRadius: 1,
                          alignItems: 'center',
+                         ml: {xs: -9, sm: -4},
                      }}>
                     <Box sx={{
                         maxWidth: 100,
@@ -55,7 +56,7 @@ export const Comments = ({postId, ...rest}: Props) => {
                         backgroundColor: '#d1c4e9',
                         p: 2,
                     }}>
-                        <Typography variant='subtitle1'>{comment.body}</Typography>
+                        <Typography variant='subtitle1' sx={{ typography: { xs: 'body2', sm: 'body1', } }}>{comment.body}</Typography>
                     </Box>
                 </Box>)}
         </Box>
