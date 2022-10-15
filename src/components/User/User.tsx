@@ -16,7 +16,8 @@ export const User = ({userId, ...rest}: Props) => {
 
     return (
         <Box {...rest} key={users.id} sx={{
-            m: {xs:2,sm: 2},
+            ml: {xs:2,sm: 0},
+            mt: {xs:2,sm: 2},
             display: 'flex',
             fleDirection: 'row',
             alignItems: 'flexStart',
