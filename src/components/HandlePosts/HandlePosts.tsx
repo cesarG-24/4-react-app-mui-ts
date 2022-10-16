@@ -50,8 +50,10 @@ export const HandlePosts = ({search}: Properties) => {
             {handleFilter?.map(
                 (post: IPost) => <Post key={post.id}
                                        post={post}
-                                       userId={post.id} title={post.title}
-                                       body={post.body}/>)}
+                                       userId={post.id}
+                                       title={post.title}
+                                       body={post.body}
+                                       reactions={post.reactions}/>)}
 
             <PagBtn
                 counter={counter}

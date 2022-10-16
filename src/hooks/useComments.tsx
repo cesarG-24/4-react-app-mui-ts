@@ -20,7 +20,6 @@ export const useComments = ({postId}: Options): IComments[] => {
             setComments([])
         }
     }
-
     useEffect(() => {
         getComments();
     }, [])

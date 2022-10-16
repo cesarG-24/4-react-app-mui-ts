@@ -4,6 +4,7 @@ export type IPost = {
     post: any,
     id: number,
     postId: number,
+    reactions: number,
 }
 
 export type IUser = {
@@ -11,9 +12,15 @@ export type IUser = {
     username: string,
 }
 
+export type ICom = {
+    length: number,
+    index: number,
+}
 export type IComments = {
     id: number,
     body: string,
-    user: IUser
+    user: IUser,
+    length:any,
+    index: any
 }
 

@@ -1,7 +1,8 @@
-import {Box, Card, Typography} from "@mui/material";
+import {Box, Card, Divider, Typography} from "@mui/material";
 
 import {Comments} from "../Comments";
 import {User} from "../User";
+import {Reactions} from "../../ui-kit/Reactions";
 
 
 interface Options {
@@ -9,10 +10,11 @@ interface Options {
     readonly post: any;
     readonly body: string;
     readonly title: string;
+    readonly reactions: number;
 }
 
 
-export const Post = ({body, title, userId, post, ...rest}: Options) => {
+export const Post = ({userId, title, body, post, reactions, ...rest}: Options) => {
 
     return (
 
@@ -20,12 +22,12 @@ export const Post = ({body, title, userId, post, ...rest}: Options) => {
             maxWidth: 535,
             width: '100%',
             maxHeight: 'fitContent',
-            height:'100%',
+            height: '100%',
             my: 2,
             display: 'flex',
             flexDirection: 'column',
             flexWrap: 'wrap',
-            alignContent:'center',
+            alignContent: 'center',
             alignItems: 'flexStart',
 
         }}>
@@ -46,8 +48,9 @@ export const Post = ({body, title, userId, post, ...rest}: Options) => {
                 }}>
                     {title}
                 </Typography>
-                <Typography variant="subtitle2" align='justify' paragraph
+                <Typography color="default" variant="subtitle2" align='justify' paragraph
                             sx={{
+
                                 mx: {xs: 2, sm: 0},
                                 width: {xs: '92%', sm: '100%'},
                                 wordWrap: 'break-word',
@@ -56,6 +59,9 @@ export const Post = ({body, title, userId, post, ...rest}: Options) => {
                             }}>
                     {body}
                 </Typography>
+                <Divider/>
+                <Reactions reactions={post.reactions}
+                           postId={post.id}/>
                 <Comments postId={post.id}/>
 
             </Box>
